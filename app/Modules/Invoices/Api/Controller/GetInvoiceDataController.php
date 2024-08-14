@@ -5,7 +5,6 @@ namespace App\Modules\Invoices\Api\Controller;
 use App\Infrastructure\Controller;
 use App\Modules\Invoices\Api\Resource\InvoiceResource;
 use App\Modules\Invoices\Application\Services\InvoiceTotalsCalculator;
-use App\Modules\Invoices\Application\UseCases\CalculateInvoiceTotals;
 use App\Modules\Invoices\Domain\Repositories\InvoiceRepositoryInterface;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Ramsey\Uuid\Uuid;
