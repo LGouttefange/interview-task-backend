@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('/invoices/{id}')
+    ->whereUuid('id')
+    ->group(function () {
+        Route::get('', \App\Modules\Invoices\Api\Controller\GetInvoiceDataController::class);
+        Route::post('/approve', \App\Modules\Invoices\Api\Controller\ApproveInvoiceController::class);
+        Route::post('/reject', \App\Modules\Invoices\Api\Controller\RejectInvoiceController::class);
+    });
